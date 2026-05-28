@@ -2,36 +2,42 @@
 
 Python | Azure Monitor API | Azure CLI | Ivanti Secure Access | HTML Reporting
 
-University of Tennessee, Knoxville — Azure for Students / Ivanti Secure Access VPN
+University of Tennessee, Knoxville — Azure for Students / Ivanti Secure Access
 
 ---
 
-## Background
+## Why I Built This
 
-This project came out of wanting to do something with the infrastructure I
-actually have access to as a UT student. I am connected to the UT VPN through
-Ivanti Secure Access regularly and I have an Azure for Students subscription
-through the university. The question I wanted to answer was whether you could
-correlate VPN session activity with cloud resource consumption and surface
-anything worth paying attention to.
+As a UT student I have two things most people building projects do not have
+access to — a live university VPN connection through Ivanti Secure Access and
+an Azure for Students subscription tied to the UT tenant. I wanted to actually
+use both of them for something meaningful instead of just connecting to the VPN
+to access campus resources and forgetting it existed.
 
-The tool captures live session metadata from the Ivanti client while connected
-to the UT network, pulls real resource metrics from Azure Monitor via the Azure
-CLI, aligns the two data streams on a shared timeline, and produces a governance
-report showing the relationship between VPN access patterns and Azure resource
-utilization.
+The question that drove this project was simple. When I connect to the UT VPN
+and interact with Azure resources, what does that activity actually look like
+at the infrastructure level and can you surface anything worth paying attention
+to by correlating the two data streams. That question turned into this tool.
+
+Academically this project pushed me to work with real enterprise APIs and
+cloud infrastructure that I had not touched before. Technically I wanted to
+learn how Azure Monitor works, how to authenticate and query it programmatically,
+and how to take two separate live data sources and make them talk to each other
+in a way that produces something useful. Both goals ended up being harder than
+I expected and more interesting than I expected.
 
 ---
 
 ## What It Does
 
-Collects real VPN session data from Ivanti Secure Access including session
-duration, bytes in and out, assigned IP, and tunnel type. Authenticates to
-the UT Azure for Students subscription and pulls live metrics from Azure Monitor
-including ingress, egress, availability, and used capacity. Correlates the two
-data streams to identify anomalies where resource activity does not align with
-expected VPN session windows. Produces a structured HTML report with session
-logs, correlation findings, and flagged anomalies.
+Captures live VPN session metadata from Ivanti Secure Access while connected
+to the UT network including session duration, bytes transferred, assigned IP,
+and tunnel configuration. Authenticates to the UT Azure for Students subscription
+using the Azure CLI and pulls real resource metrics from Azure Monitor including
+ingress, egress, availability, and transaction counts. Correlates the two data
+streams on a shared timeline to identify anomalies where cloud resource activity
+does not align with expected VPN session windows. Produces an HTML governance
+report with session logs, correlation findings, and flagged anomalies.
 
 ---
 
@@ -66,6 +72,24 @@ logs, correlation findings, and flagged anomalies.
 
 ---
 
+## What I Learned
+
+Working with the Azure Monitor API was the biggest technical lift. The
+authentication flow through the Azure CLI, scoping API calls to specific
+resources, and parsing the metric response format all took more time than
+I expected. The correlation logic was conceptually straightforward but
+getting the two data streams aligned on a shared timeline required thinking
+carefully about how VPN session timestamps and Azure metric collection
+windows relate to each other.
+
+The bigger takeaway was understanding what enterprise infrastructure monitoring
+actually looks like in practice. This is a small scale version of what IT
+operations teams do across thousands of resources. Building even a simple
+version of it made the operational side of IT feel a lot more concrete than
+it did from a textbook.
+
+---
+
 ## How to Run
 
 ```bash
@@ -92,12 +116,13 @@ open reports/correlation_report.html
 ---
 
 ## Project Structure
----
-
-## What Makes This Different
-
-Most infrastructure monitoring projects use synthetic data or public datasets.
-This one uses real session data from a live university VPN connection and real
-resource metrics from an authenticated Azure subscription. Every data point in
-the report came from an actual API call to Azure Monitor or an actual Ivanti
-session while connected to the UT network.
+UT-VPN-Azure-Resource-Monitor/
+├── scripts/
+│   ├── vpn_collector.py
+│   ├── azure_monitor.py
+│   ├── correlator.py
+│   └── report_generator.py
+├── data/
+├── reports/
+├── screenshots/
+└── requirements.txt
