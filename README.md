@@ -43,7 +43,6 @@ report with session logs, correlation findings, and flagged anomalies.
 ## Screenshots
 
 ### Azure Storage Account Overview
-![Azure Storage Overview](screenshots/azure_storage_overview.png)
 
 ### Azure Monitor Insights Dashboard
 ![Azure Insights](screenshots/azure_insights_dashboard.png)
