@@ -1,0 +1,51 @@
+{
+  "analysis_timestamp": "2026-05-28T02:27:47.338375",
+  "vpn_sessions_analyzed": 1,
+  "azure_resource": "utkvpnmonitor",
+  "subscription": "Azure for Students - University of Tennessee",
+  "session_summaries": [
+    {
+      "timestamp": "2026-05-28T02:22:08.905236",
+      "duration_seconds": 0,
+      "bytes_in": 0,
+      "bytes_out": 1545,
+      "assigned_ip": "10.65.6.230",
+      "tunnel_type": "VPN",
+      "vpn_type": "ESP"
+    }
+  ],
+  "correlation_findings": [
+    {
+      "finding": "VPN to Azure Ingress Ratio",
+      "vpn_bytes_out": 1545,
+      "azure_ingress_bytes": 0,
+      "description": "Compares bytes leaving VPN client against bytes entering Azure storage"
+    },
+    {
+      "finding": "Session Activity Window",
+      "sessions_recorded": 1,
+      "azure_data_points": 1,
+      "description": "VPN sessions logged against Azure metric collection windows"
+    }
+  ],
+  "anomalies": [
+    {
+      "type": "Resource Activity Without VPN Correlation",
+      "severity": "Medium",
+      "description": "Azure resource shows no ingress during active VPN session window",
+      "recommendation": "Verify resource access controls and review network routing"
+    },
+    {
+      "type": "One-Directional VPN Traffic",
+      "severity": "Low",
+      "description": "VPN session shows outbound traffic only with no inbound data",
+      "recommendation": "Normal for initial connection setup but monitor for extended periods"
+    }
+  ],
+  "totals": {
+    "total_vpn_bytes_in": 0,
+    "total_vpn_bytes_out": 1545,
+    "total_azure_ingress": 0,
+    "total_azure_egress": 0
+  }
+}

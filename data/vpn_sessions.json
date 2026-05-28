@@ -1,0 +1,13 @@
+[
+  {
+    "timestamp": "2026-05-28T02:22:08.905236",
+    "session_duration": "python scripts/vpn_collector.py",
+    "bytes_in": "0",
+    "bytes_out": "1545",
+    "assigned_ip": "10.65.6.230",
+    "tunnel_type": "VPN",
+    "vpn_type": "ESP",
+    "connection_source": "User-added",
+    "status": "connected"
+  }
+]

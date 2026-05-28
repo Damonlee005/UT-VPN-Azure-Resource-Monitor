@@ -1,0 +1,23 @@
+{
+  "collected_at": "2026-05-28T02:26:42.715907",
+  "resource": "utkvpnmonitor",
+  "subscription": "Azure for Students - University of Tennessee",
+  "metrics": {
+    "Ingress": [
+      {
+        "timestamp": "2026-05-28T05:26:00Z",
+        "metric": "Ingress",
+        "value": 0
+      }
+    ],
+    "Egress": [
+      {
+        "timestamp": "2026-05-28T05:26:00Z",
+        "metric": "Egress",
+        "value": 0
+      }
+    ],
+    "Availability": [],
+    "UsedCapacity": []
+  }
+}
