@@ -84,7 +84,7 @@ The bigger takeaway was understanding what enterprise infrastructure monitoring
 actually looks like in practice. This is a small scale version of what IT
 operations teams do across thousands of resources. Building even a simple
 version of it made the operational side of IT feel a lot more concrete than
-it did from a textbook.
+it did from a book knowledge.
 
 ---
 
