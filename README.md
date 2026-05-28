@@ -9,7 +9,7 @@ University of Tennessee, Knoxville — Azure for Students / Ivanti Secure Access
 ## Why I Built This
 
 As a UT student I have two things most people building projects do not have
-access to — a live university VPN connection through Ivanti Secure Access and
+access to, a live university VPN connection through Ivanti Secure Access and
 an Azure for Students subscription tied to the UT tenant. I wanted to actually
 use both of them for something meaningful instead of just connecting to the VPN
 to access campus resources and forgetting it existed.
@@ -17,14 +17,13 @@ to access campus resources and forgetting it existed.
 The question that drove this project was simple. When I connect to the UT VPN
 and interact with Azure resources, what does that activity actually look like
 at the infrastructure level and can you surface anything worth paying attention
-to by correlating the two data streams. That question turned into this tool.
+to by correlating the two data streams. 
 
 Academically this project pushed me to work with real enterprise APIs and
-cloud infrastructure that I had not touched before. Technically I wanted to
+cloud infrastructure that I only had conceptaul knowledge of. Technically I wanted to
 learn how Azure Monitor works, how to authenticate and query it programmatically,
 and how to take two separate live data sources and make them talk to each other
-in a way that produces something useful. Both goals ended up being harder than
-I expected and more interesting than I expected.
+in a way that produces something useful.
 
 ---
 
