@@ -113,14 +113,7 @@ open reports/correlation_report.html
 
 ---
 
-## Project Structure
-UT-VPN-Azure-Resource-Monitor/
-├── scripts/
-│   ├── vpn_collector.py
-│   ├── azure_monitor.py
-│   ├── correlator.py
-│   └── report_generator.py
-├── data/
-├── reports/
-├── screenshots/
-└── requirements.txt
+## The future for this Project
+
+The future of the project will consist of continuing logging and data being added. Over the course of the coming months I will continue to add session data weekly, this for one will add data to the prject, and allow for more substace within the project.
+
